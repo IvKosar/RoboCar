@@ -53,25 +53,28 @@ void setup()
   Serial.begin(9600);
 }
 void loop()
- {
-  delay(100);
+ {delay(1000);
   leftDistance = get_distance(leftTrigPin, leftEchoPin);
   // Prints the distance on the Serial Monitor
   Serial.print("Distance from left: ");
+  delay(10);
   Serial.println(leftDistance);
   delay(100);
   rightDistance = get_distance(rightTrigPin, rightEchoPin);
   Serial.print("Distance from right: ");
+  delay(10);
   Serial.println(rightDistance);
   delay(100);
 
   // Start moving
   motors(150,150); // Robot will move straight ahead slowly
-  delay(1000); // Delay - robot will keep moving as told
+  delay(5000); // Delay - robot will keep moving as told
   motors(0,0); // Stopping the motors
-  delay(1000); // A little delay, so the robot will not start moving immediately.
+  delay(500); // A little delay, so the robot will not start moving immediately.
   motors(-150,-150); // Robot will go back
-  delay(1000); // Delay - robot will keep moving as told
+  delay(5000); // Delay - robot will keep moving as told
+  motors(0,0);
+  delay(500);
   
 }
  
